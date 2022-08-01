@@ -1,9 +1,29 @@
-$bg-primary: green;
-$bg-secondary: red;
+////////////////////////
+//Making variable global
+////////////////////////
 
-body {
-  background-color: $bg-primary;
-  h1 {
-    color: $bg-secondary;
-  }
-}
+// $bg-primary: green;
+
+// h1 {
+//   $bg-primary: red !global;
+//   color: $bg-primary;
+// }
+
+// p {
+//   color: $bg-primary;
+// }
+
+////////////////////////
+// Hyphens vs Undescores
+////////////////////////
+
+// $bg-primary: green;
+// $bg_primary: yellow;
+
+// h1 {
+//   color: $bg-primary;
+// }
+
+////////////////////////
+// Nesting
+////////////////////////
