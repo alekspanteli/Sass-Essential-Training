@@ -1,0 +1,9 @@
+$bg-primary: green;
+$bg-secondary: red;
+
+body {
+  background-color: $bg-primary;
+  h1 {
+    color: $bg-secondary;
+  }
+}
