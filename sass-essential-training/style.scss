@@ -71,14 +71,56 @@
 // Mixins
 ////////////////////////
 
-@mixin btn($color: red, $radius: 10px) {
-  background-color: $color;
-  border-radius: $radius;
-}
+// @mixin btn($color: red, $radius: 10px) {
+//   background-color: $color;
+//   border-radius: $radius;
+// }
 
-.btn {
-  @include btn;
-  &--primary {
-    @include btn(green, 5px);
-  }
-}
+// .btn {
+//   @include btn;
+//   &--primary {
+//     @include btn(green, 5px);
+//   }
+// }
+
+////////////////////////
+// Extend
+////////////////////////
+
+// .btn {
+//   border: 0;
+//   &--primary {
+//     @extend .btn;
+//     background-color: red;
+//   }
+//   &--secondary {
+//     @extend .btn;
+//     background-color: yellow;
+//   }
+// }
+
+////////////////////////
+// Challenge 1
+////////////////////////
+
+// .btn-wrap {
+//   display: flex;
+//   gap: 10px;
+// }
+
+// @mixin btn($background-color) {
+//   background-color: $background-color;
+//   &:hover {
+//     text-decoration: none;
+//   }
+// }
+
+// .btn {
+//   text-decoration: underline;
+//   &--primary {
+//     @include btn(red);
+//   }
+//   &--secondary {
+//     @include btn(green);
+//   }
+// }
