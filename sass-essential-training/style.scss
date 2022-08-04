@@ -125,12 +125,70 @@
 //   }
 // }
 
-@mixin btn($name: '', $bg: '', $col: '') {
-  .btn#{$name} {
-    background: $bg;
-    color: $col;
-  }
-}
+////////////////////////
+// Interpolation
+////////////////////////
 
-@include btn('--secondary', red, yellow);
-@include btn('--primary', green, pink);
+// @mixin btn($name: '', $bg: '', $col: '') {
+//   .btn#{$name} {
+//     background: $bg;
+//     color: $col;
+//   }
+// }
+
+// @include btn('--secondary', red, yellow);
+// @include btn('--primary', green, pink);
+
+////////////////////////
+// Placeholders
+////////////////////////
+
+// %btn {
+//   background-color: red;
+//   color: green;
+// }
+
+// .btn {
+//   &--primary {
+//     @extend %btn;
+//   }
+//   &--secondary {
+//     @extend %btn;
+//   }
+// }
+
+////////////////////////
+// Lists
+////////////////////////
+
+$myArray: primary secondary warning 'item info';
+/* #{nth($myArray, 1)} */
+$myArray: primary, secondary, warning, 'item info';
+/* #{nth($myArray, 2)} */
+$myArray: (primary, secondary, warning, 'item info');
+/* #{nth($myArray, 3)} */
+$myArray: [primary, secondary, warning, 'item info' ];
+/* #{nth($myArray, 4)} */
+$myArray: [primary, secondary, warning, 'item info' ];
+/* #{nth($myArray, -1)} */
+
+////////////////////////
+// Each
+////////////////////////
+
+// @mixin btn($name: '', $bg: '', $col: '') {
+//   .btn#{$name} {
+//     background: $bg;
+//     color: $col;
+//   }
+// }
+
+// $buttons: --primary red yellow, --secondary green blue;
+
+// @each $name, $bg, $col in $buttons {
+//   @include btn($name, $bg, $col);
+// }
+
+////////////////////////
+// For
+////////////////////////
