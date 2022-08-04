@@ -247,3 +247,51 @@ $myArray: [primary, secondary, warning, 'item info' ];
 // @each $key, $values in $buttons {
 //   @include btn($key, $values...);
 // }
+
+@use 'sass:map';
+@use 'sass:color';
+
+$badges: (
+  '--primary': (
+    red,
+    green,
+  ),
+  '--danger': (
+    blue,
+    white,
+  ),
+  '--info': (
+    red,
+    yellow,
+  ),
+);
+
+@mixin badge($name: '', $bg: #444, $col: white, $style: null) {
+  .badge#{$name} {
+    border: 0;
+    @if $style == 'pill' {
+      border-radius: 30px !important;
+      padding: 1em !important;
+    } @else {
+      border-radius: 5px;
+      padding: 0.5em;
+    }
+    padding: 0.5em;
+    background-color: $bg;
+    font-size: 1em;
+    color: $col;
+    margin: 0.1em;
+    display: inline-block;
+    cursor: pointer;
+    &:hover {
+      background-color: color.scale($bg, $lightness: - 30%);
+    }
+  }
+}
+
+@include badge('');
+@include badge('--pill', $style: 'pill');
+
+@each $key, $values in $badges {
+  @include badge($key, $values...);
+}
