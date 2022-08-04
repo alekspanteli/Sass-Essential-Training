@@ -124,3 +124,13 @@
 //     @include btn(green);
 //   }
 // }
+
+@mixin btn($name: '', $bg: '', $col: '') {
+  .btn#{$name} {
+    background: $bg;
+    color: $col;
+  }
+}
+
+@include btn('--secondary', red, yellow);
+@include btn('--primary', green, pink);
