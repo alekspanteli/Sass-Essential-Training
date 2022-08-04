@@ -193,10 +193,46 @@ $myArray: [primary, secondary, warning, 'item info' ];
 // For
 ////////////////////////
 
-$font-size: (3rem, 2.5rem, 2rem, 1rem);
+// $font-size: (3rem, 2.5rem, 2rem, 1rem);
 
-@for $i from 1 through length($font-size) {
-  h#{$i} {
-    font-size: nth($font-size, $i);
+// @for $i from 1 through length($font-size) {
+//   h#{$i} {
+//     font-size: nth($font-size, $i);
+//   }
+// }
+
+////////////////////////
+// Maps
+////////////////////////
+
+// @use 'sass:map';
+
+// $colorList: (
+//   'primary': red,
+//   'secondary': green,
+//   'accent': yellow,
+// );
+
+$buttons: (
+  '--primary': (
+    red,
+    green,
+  ),
+  '--secondary': (
+    pink,
+    yellow,
+  ),
+);
+
+@mixin btn($name: '', $bg: black, $col: red) {
+  .btn#{$name} {
+    background: $bg;
+    color: $col;
   }
+}
+
+@include btn('');
+
+@each $key, $values in $buttons {
+  @include btn($key, $values...);
 }
