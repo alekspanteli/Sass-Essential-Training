@@ -213,26 +213,37 @@ $myArray: [primary, secondary, warning, 'item info' ];
 //   'accent': yellow,
 // );
 
-$buttons: (
-  '--primary': (
-    red,
-    green,
-  ),
-  '--secondary': (
-    pink,
-    yellow,
-  ),
-);
+// $buttons: (
+//   '--primary': (
+//     red,
+//     green,
+//   ),
+//   '--secondary': (
+//     pink,
+//     yellow,
+//   ),
+//   // '--circle': (
+//   //   pink,
+//   //   yellow,
+//   //   true,
+//   // ),,,,
+// );
 
-@mixin btn($name: '', $bg: black, $col: red) {
-  .btn#{$name} {
-    background: $bg;
-    color: $col;
-  }
-}
+// @mixin btn($name: '', $bg: black, $col: red, $oval: false) {
+//   .btn#{$name} {
+//     background: $bg;
+//     color: $col;
+//     @if $oval {
+//       border-radius: 80%;
+//     } @else {
+//       border-radius: 5px;
+//     }
+//   }
+// }
 
-@include btn('');
+// @include btn('');
+// @include btn('--circle', blue, red, true);
 
-@each $key, $values in $buttons {
-  @include btn($key, $values...);
-}
+// @each $key, $values in $buttons {
+//   @include btn($key, $values...);
+// }
